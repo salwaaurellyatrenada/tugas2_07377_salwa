@@ -1,0 +1,215 @@
+:root {
+  /* Palet disesuaikan dengan background krem + garis sakura cokelat */
+  --pink-utama: #9c6556;   /* aksen: tombol, border, header tabel */
+  --pink-tua: #6f4236;     /* judul, link, hover */
+  --pink-muda: #ecdad3;    /* border lembut, hover, catatan */
+  --pink-susu: #f7eeea;    /* latar input, baris tabel genap */
+  --teks: #3f2b26;         /* teks utama (cokelat tua, kontras tinggi) */
+  --teks-lembut: #7d625a;
+  --putih: #ffffff;
+  --kartu: rgba(255, 251, 249, 0.92);
+  --radius: 24px;
+  --bayangan: 0 8px 24px rgba(111, 66, 54, 0.15);
+}
+
+/* ===== Dasar ===== */
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: var(--teks);
+  line-height: 1.7;
+  background-color: #f4e8e4; /* krem, cadangan jika gambar belum termuat */
+  background-image: url('../image/background.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1, h2, h3 { font-family: 'Baloo 2', cursive; color: var(--pink-tua); }
+
+a { color: var(--pink-tua); font-weight: 600; }
+a:hover { color: var(--pink-utama); }
+
+/* ===== Navbar ===== */
+.navbar-pink {
+  background: rgba(255, 251, 249, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid var(--pink-utama);
+  box-shadow: 0 4px 16px rgba(111, 66, 54, 0.15);
+}
+.navbar-pink .navbar-brand {
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  color: var(--pink-tua);
+}
+.navbar-pink .nav-link {
+  color: var(--teks);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  margin: 0 0.1rem;
+}
+.navbar-pink .nav-link:hover { background: var(--pink-muda); color: var(--pink-tua); }
+.navbar-pink .navbar-toggler { border-color: var(--pink-utama); }
+.navbar-pink .navbar-toggler:focus { box-shadow: 0 0 0 0.2rem rgba(156, 101, 86, 0.35); }
+
+/* ===== Hero ===== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+.hero__card {
+  background: var(--kartu);
+  border: 3px dashed var(--pink-utama);
+  border-radius: 40px;
+  padding: 3rem 2.5rem;
+  max-width: 640px;
+  width: 100%;
+  box-shadow: var(--bayangan);
+}
+.hero__badge {
+  display: inline-block;
+  background: var(--pink-muda);
+  color: var(--pink-tua);
+  font-weight: 700;
+  padding: 0.3rem 1.2rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.hero h1 { font-size: clamp(2.2rem, 7vw, 3.6rem); line-height: 1.1; margin-bottom: 0.5rem; }
+.hero__program { font-size: 1.2rem; font-weight: 600; margin-bottom: 0; }
+.hero__univ { color: var(--teks-lembut); margin-bottom: 0; }
+
+/* ===== Tombol ===== */
+.btn-pink {
+  background: var(--pink-utama);
+  border: 2px solid var(--pink-utama);
+  color: var(--putih);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.55rem 1.6rem;
+  box-shadow: 0 4px 0 var(--pink-tua);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-pink:hover, .btn-pink:focus {
+  background: var(--pink-tua);
+  border-color: var(--pink-tua);
+  color: var(--putih);
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #4a2b22;
+}
+.btn-outline-pink {
+  background: var(--putih);
+  border: 2px solid var(--pink-utama);
+  color: var(--pink-tua);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.55rem 1.6rem;
+}
+.btn-outline-pink:hover { background: var(--pink-muda); color: var(--pink-tua); border-color: var(--pink-tua); }
+
+/* ===== Section & panel ===== */
+.section { padding: 2.5rem 0; }
+
+.section-title {
+  display: inline-block;
+  background: var(--kartu);
+  border: 2px solid var(--pink-utama);
+  border-radius: 999px;
+  padding: 0.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  box-shadow: 0 4px 0 var(--pink-utama);
+}
+
+.panel {
+  background: var(--kartu);
+  border: 2px solid var(--pink-muda);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--bayangan);
+}
+.panel h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+.panel ul, .panel ol { margin-bottom: 0; padding-left: 1.3rem; }
+.panel li { margin-bottom: 0.3rem; }
+.panel li::marker { color: var(--pink-utama); font-weight: 700; }
+
+/* ===== Foto profil ===== */
+.profile-image {
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--putih);
+  outline: 4px dashed var(--pink-utama);
+  outline-offset: 4px;
+  box-shadow: var(--bayangan);
+}
+
+/* ===== Tabel ===== */
+.table-pink { --bs-table-bg: transparent; margin: 0; }
+.table-pink thead th {
+  background: var(--pink-utama);
+  color: var(--putih);
+  font-family: 'Baloo 2', cursive;
+  font-weight: 600;
+  border: 0;
+  padding: 0.9rem 1rem;
+  white-space: nowrap;
+}
+.table-pink tbody td { padding: 0.85rem 1rem; color: var(--teks); border-color: var(--pink-muda); }
+.table-pink tbody tr:nth-child(even) td { background: var(--pink-susu); }
+.table-pink tbody tr:hover td { background: var(--pink-muda); }
+
+/* ===== Catatan kampus ===== */
+.campus-note {
+  background: var(--kartu);
+  border-left: 8px solid var(--pink-utama);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.1rem 1.5rem;
+  box-shadow: var(--bayangan);
+}
+
+/* ===== Form ===== */
+.form-label { font-weight: 700; color: var(--pink-tua); }
+
+.form-control, .form-select {
+  border: 2px solid #d9c2b9;
+  border-radius: 16px;
+  padding: 0.6rem 1rem;
+  color: var(--teks);
+  background-color: var(--pink-susu);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--pink-utama);
+  box-shadow: 0 0 0 0.2rem rgba(156, 101, 86, 0.25);
+  background-color: var(--putih);
+}
+.form-check-input { border: 2px solid var(--pink-utama); }
+.form-check-input:checked { background-color: var(--pink-utama); border-color: var(--pink-utama); }
+.form-check-input:focus { box-shadow: 0 0 0 0.2rem rgba(156, 101, 86, 0.25); border-color: var(--pink-tua); }
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 2rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--putih);
+  background: var(--pink-tua);
+  border-top: 4px dashed var(--pink-muda);
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 576px) {
+  .hero { min-height: 70vh; }
+  .hero__card { padding: 2rem 1.25rem; border-radius: 28px; }
+  .panel { padding: 1.25rem; }
+}
