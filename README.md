@@ -1,1 +1,0 @@
-# tugas2_07377_salwa
